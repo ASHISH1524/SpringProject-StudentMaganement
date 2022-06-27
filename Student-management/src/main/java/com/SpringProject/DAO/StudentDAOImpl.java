@@ -19,10 +19,20 @@ public class StudentDAOImpl implements Student_DAO {
 		
 		//List<Student> studentList = new ArrayList<Student>();	
 		
-		String sql ="SELECT * FROM `spring-project`.`student-database`";
+		String sql ="SELECT * FROM `spring-project`.`student`";
 		List<Student> theListOfStudent = jdbcTemplate.query(sql, new StudentRowMapper());
 		
 		  return theListOfStudent;
+	}
+	@Override
+	public void saveStudent(Student student) {
+		Object[] sqlparameters= {student.getName(),student.getMobileNumber(),student.getLocation()};
+		
+		String sqlQuerry ="insert into student(Name,Mobile_number,Location) values(?,?,?)";
+		
+		jdbcTemplate.update(sqlQuerry, sqlparameters);
+		System.out.println("1 row inserted");
+		
 	}
 
 }

@@ -6,9 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.SpringProject.API.Student;
-import com.SpringProject.API.StudentDTO;
 import com.SpringProject.DAO.StudentDAOImpl;
 import com.SpringProject.DAO.Student_DAO;
 
@@ -27,9 +28,18 @@ public class StudentController {
 	@GetMapping("/showAddStudentPage")
 	public String addStudent(Model model)
 	{
-		StudentDTO studentDTO = new StudentDTO();
-		model.addAttribute("student", studentDTO);
+		Student student = new Student();
+		model.addAttribute("student", student);
 		return "add-student";
 	}
+	
+	@PostMapping("/saveStudent")
+	public String save_student(Student student)
+	{
+		System.out.println(student);
+		studentdata.saveStudent(student);
+		return "redirect:/showStudent";
+	}
+
 }
 

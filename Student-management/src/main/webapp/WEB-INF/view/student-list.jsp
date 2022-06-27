@@ -10,6 +10,10 @@
 <body>
 	<h1 align="center">Spring Project</h1>
 	<div align="center">
+		
+		<form action="showAddStudentPage">
+		<input type="submit" value="ADD">
+		</form>
 		<table border="1">
 			<thead>
 				<tr>

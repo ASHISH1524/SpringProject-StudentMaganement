@@ -8,16 +8,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form:form action="saveStudent" modelAttribute="student">
+	<form:form action="saveStudent" modelAttribute="student" method="POST">
 		<label>Name:</label>
 		<form:input path="name" />
 		</br>
 
 		<label>Mobile:</label>
-		<form:input path="mobile" />
+		<form:input path="mobileNumber" />
 		</br>
 		<label>Country:</label>
-		<form:input path="country" />
+		<form:input path="location" />
 		</br>
 		<input type="submit" value=Submit>
 

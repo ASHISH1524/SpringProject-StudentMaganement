@@ -2,9 +2,9 @@ package com.SpringProject.API;
 
 public class Student {
 
-private int id;
+private int id=1;
 private String name;
-private long mobileNumber;
+private Long mobileNumber;
 private String location;
 public int getId() {
 	return id;
@@ -18,10 +18,10 @@ public String getName() {
 public void setName(String name) {
 	this.name = name;
 }
-public long getMobileNumber() {
+public Long getMobileNumber() {
 	return mobileNumber;
 }
-public void setMobileNumber(long mobileNumber) {
+public void setMobileNumber(Long mobileNumber) {
 	this.mobileNumber = mobileNumber;
 }
 public String getLocation() {

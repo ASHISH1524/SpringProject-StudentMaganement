@@ -7,5 +7,6 @@ import com.SpringProject.API.Student;
 public interface Student_DAO {
 	
 	List<Student> loadStudent();
+	void saveStudent(Student student);
 
 }
