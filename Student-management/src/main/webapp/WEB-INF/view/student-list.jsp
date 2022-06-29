@@ -30,6 +30,8 @@
 					<td>${student.name}</td>
 					<td>${student.mobileNumber}</td>
 					<td>${student.location}</td>
+					<td><a href="updateStudent?userId=${student.id}">UPDATE</a></td>
+					<td><a href="deleteStudent?userId=${student.id}" onclick="if(!(confirm('Are you sure you want to delete?'))) return false">DELETE</a></td>
 				</tr>
 			</c:forEach>
 		</table>

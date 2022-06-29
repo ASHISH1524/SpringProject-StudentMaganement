@@ -34,5 +34,27 @@ public class StudentDAOImpl implements Student_DAO {
 		System.out.println("1 row inserted");
 		
 	}
+	@Override
+	public Student getStudent(int id) {
+		
+		String sql="SELECT * FROM STUDENT WHERE ID=?";
+		Student student = jdbcTemplate.queryForObject(sql, new StudentRowMapper(), id);
+		return student;
+	}
+	@Override
+	public void update(Student student) {
+		
+		String sql="UPDATE STUDENT SET Name=?, Mobile_number=?, Location=? WHERE id=?	";
+		jdbcTemplate.update(sql, student.getName(),student.getMobileNumber(),student.getLocation(),student.getId());
+		System.out.println("1 record updated");
+	}
+	@Override
+	public void delete(int id) {
+		String sql="DELETE FROM STUDENT  WHERE id=?	";
+		jdbcTemplate.update(sql, id);
+		
+		System.out.println("1 record deleted");
+		
+	}
 
 }

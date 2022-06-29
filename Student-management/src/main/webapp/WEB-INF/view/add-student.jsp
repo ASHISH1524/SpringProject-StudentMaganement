@@ -8,7 +8,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+<div align="Center">
+<h1>ADD STUDENT</h1>
 	<form:form action="saveStudent" modelAttribute="student" method="POST">
+		<form:hidden path="id"/>
+		
 		<label>Name:</label>
 		<form:input path="name" />
 		</br>
@@ -22,6 +27,6 @@
 		<input type="submit" value=Submit>
 
 	</form:form>
-
+</div>
 </body>
 </html>
